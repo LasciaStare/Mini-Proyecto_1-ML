@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Content with notebooks &#8212; My sample book</title>
+    <title>Analisis Exploratorio de los datos &#8212; Libro de prueba</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,13 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,8 +152,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Libro de prueba - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Libro de prueba - Home"/>`);</script>
   
   
 </a></div>
@@ -182,9 +179,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Exploratorio de los datos</a></li>
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -370,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Content with notebooks</h1>
+    <h1>Analisis Exploratorio de los datos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,10 +382,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Exploratorio de los datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier">KNN Classifier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion">KNN Regresion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-distintos-valores-de-k">Comparación de distintos valores de k</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-y-conclusiones">Documentación y conclusiones</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -394,84 +402,1023 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
-<h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Link to this heading">#</a></h1>
-<p>You can also create content with Jupyter Notebooks. This means that you can include
-code blocks and their outputs in your book.</p>
-<section id="markdown-notebooks">
-<h2>Markdown + notebooks<a class="headerlink" href="#markdown-notebooks" title="Link to this heading">#</a></h2>
-<p>As it is markdown, you can embed images, HTML, etc into your posts!</p>
-<p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
-<p>You can also <span class="math notranslate nohighlight">\(add_{math}\)</span> and</p>
-<div class="math notranslate nohighlight">
-\[
-math^{blocks}
-\]</div>
-<p>or</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\mbox{mean} la_{tex} \\ \\
-math blocks
-\end{aligned}
-\end{split}\]</div>
-<p>But make sure you $Escape $your $dollar signs $you want to keep!</p>
-</section>
-<section id="myst-markdown">
-<h2>MyST markdown<a class="headerlink" href="#myst-markdown" title="Link to this heading">#</a></h2>
-<p>MyST markdown works in Jupyter Notebooks as well. For more information about MyST markdown, check
-out <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST guide in Jupyter Book</a>,
-or see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">the MyST markdown documentation</a>.</p>
-</section>
-<section id="code-blocks-and-outputs">
-<h2>Code blocks and outputs<a class="headerlink" href="#code-blocks-and-outputs" title="Link to this heading">#</a></h2>
-<p>Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-exploratorio-de-los-datos">
+<h1>Analisis Exploratorio de los datos<a class="headerlink" href="#analisis-exploratorio-de-los-datos" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7f1406db7610&gt;
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span><span class="n">roc_auc_score</span><span class="p">,</span><span class="n">balanced_accuracy_score</span><span class="p">,</span><span class="n">ConfusionMatrixDisplay</span><span class="p">,</span><span class="n">roc_curve</span><span class="p">,</span><span class="n">auc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">label_binarize</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="n">ii</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
-
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-                <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- Cargar los datos---#</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_miniproyecto1.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Target&#39;</span><span class="p">:</span> <span class="s1">&#39;Estado&#39;</span><span class="p">})</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a45d8db2ca1b3b217e639156a5a5790dd57060424028f8d38af552cabbca61fb.png" src="_images/a45d8db2ca1b3b217e639156a5a5790dd57060424028f8d38af552cabbca61fb.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Marital status</th>
+      <th>Application mode</th>
+      <th>Application order</th>
+      <th>Course</th>
+      <th>Daytime/evening attendance\t</th>
+      <th>Previous qualification</th>
+      <th>Previous qualification (grade)</th>
+      <th>Nacionality</th>
+      <th>Mother's qualification</th>
+      <th>Father's qualification</th>
+      <th>...</th>
+      <th>Curricular units 2nd sem (credited)</th>
+      <th>Curricular units 2nd sem (enrolled)</th>
+      <th>Curricular units 2nd sem (evaluations)</th>
+      <th>Curricular units 2nd sem (approved)</th>
+      <th>Curricular units 2nd sem (grade)</th>
+      <th>Curricular units 2nd sem (without evaluations)</th>
+      <th>Unemployment rate</th>
+      <th>Inflation rate</th>
+      <th>GDP</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>17</td>
+      <td>5</td>
+      <td>171</td>
+      <td>1</td>
+      <td>1</td>
+      <td>122.0</td>
+      <td>1</td>
+      <td>19</td>
+      <td>12</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>10.8</td>
+      <td>1.4</td>
+      <td>1.74</td>
+      <td>Dropout</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>15</td>
+      <td>1</td>
+      <td>9254</td>
+      <td>1</td>
+      <td>1</td>
+      <td>160.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>13.666667</td>
+      <td>0</td>
+      <td>13.9</td>
+      <td>-0.3</td>
+      <td>0.79</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>9070</td>
+      <td>1</td>
+      <td>1</td>
+      <td>122.0</td>
+      <td>1</td>
+      <td>37</td>
+      <td>37</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>10.8</td>
+      <td>1.4</td>
+      <td>1.74</td>
+      <td>Dropout</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>17</td>
+      <td>2</td>
+      <td>9773</td>
+      <td>1</td>
+      <td>1</td>
+      <td>122.0</td>
+      <td>1</td>
+      <td>38</td>
+      <td>37</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>10</td>
+      <td>5</td>
+      <td>12.400000</td>
+      <td>0</td>
+      <td>9.4</td>
+      <td>-0.8</td>
+      <td>-3.12</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>39</td>
+      <td>1</td>
+      <td>8014</td>
+      <td>0</td>
+      <td>1</td>
+      <td>100.0</td>
+      <td>1</td>
+      <td>37</td>
+      <td>38</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>13.000000</td>
+      <td>0</td>
+      <td>13.9</td>
+      <td>-0.3</td>
+      <td>0.79</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4419</th>
+      <td>1</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9773</td>
+      <td>1</td>
+      <td>1</td>
+      <td>125.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>8</td>
+      <td>5</td>
+      <td>12.666667</td>
+      <td>0</td>
+      <td>15.5</td>
+      <td>2.8</td>
+      <td>-4.06</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>4420</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9773</td>
+      <td>1</td>
+      <td>1</td>
+      <td>120.0</td>
+      <td>105</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>2</td>
+      <td>11.000000</td>
+      <td>0</td>
+      <td>11.1</td>
+      <td>0.6</td>
+      <td>2.02</td>
+      <td>Dropout</td>
+    </tr>
+    <tr>
+      <th>4421</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>9500</td>
+      <td>1</td>
+      <td>1</td>
+      <td>154.0</td>
+      <td>1</td>
+      <td>37</td>
+      <td>37</td>
+      <td>...</td>
+      <td>0</td>
+      <td>8</td>
+      <td>9</td>
+      <td>1</td>
+      <td>13.500000</td>
+      <td>0</td>
+      <td>13.9</td>
+      <td>-0.3</td>
+      <td>0.79</td>
+      <td>Dropout</td>
+    </tr>
+    <tr>
+      <th>4422</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>9147</td>
+      <td>1</td>
+      <td>1</td>
+      <td>180.0</td>
+      <td>1</td>
+      <td>37</td>
+      <td>37</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>6</td>
+      <td>5</td>
+      <td>12.000000</td>
+      <td>0</td>
+      <td>9.4</td>
+      <td>-0.8</td>
+      <td>-3.12</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>4423</th>
+      <td>1</td>
+      <td>10</td>
+      <td>1</td>
+      <td>9773</td>
+      <td>1</td>
+      <td>1</td>
+      <td>152.0</td>
+      <td>22</td>
+      <td>38</td>
+      <td>37</td>
+      <td>...</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>13.000000</td>
+      <td>0</td>
+      <td>12.7</td>
+      <td>3.7</td>
+      <td>-1.70</td>
+      <td>Graduate</td>
+    </tr>
+  </tbody>
+</table>
+<p>4424 rows × 37 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Marital status&#39; &#39;Application mode&#39; &#39;Application order&#39; &#39;Course&#39;
+ &#39;Daytime/evening attendance\t&#39; &#39;Previous qualification&#39;
+ &#39;Previous qualification (grade)&#39; &#39;Nacionality&#39; &quot;Mother&#39;s qualification&quot;
+ &quot;Father&#39;s qualification&quot; &quot;Mother&#39;s occupation&quot; &quot;Father&#39;s occupation&quot;
+ &#39;Admission grade&#39; &#39;Displaced&#39; &#39;Educational special needs&#39; &#39;Debtor&#39;
+ &#39;Tuition fees up to date&#39; &#39;Gender&#39; &#39;Scholarship holder&#39;
+ &#39;Age at enrollment&#39; &#39;International&#39; &#39;Curricular units 1st sem (credited)&#39;
+ &#39;Curricular units 1st sem (enrolled)&#39;
+ &#39;Curricular units 1st sem (evaluations)&#39;
+ &#39;Curricular units 1st sem (approved)&#39; &#39;Curricular units 1st sem (grade)&#39;
+ &#39;Curricular units 1st sem (without evaluations)&#39;
+ &#39;Curricular units 2nd sem (credited)&#39;
+ &#39;Curricular units 2nd sem (enrolled)&#39;
+ &#39;Curricular units 2nd sem (evaluations)&#39;
+ &#39;Curricular units 2nd sem (approved)&#39; &#39;Curricular units 2nd sem (grade)&#39;
+ &#39;Curricular units 2nd sem (without evaluations)&#39; &#39;Unemployment rate&#39;
+ &#39;Inflation rate&#39; &#39;GDP&#39; &#39;Estado&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4424, 37)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4424 entries, 0 to 4423
+Data columns (total 37 columns):
+ #   Column                                          Non-Null Count  Dtype  
+---  ------                                          --------------  -----  
+ 0   Marital status                                  4424 non-null   int64  
+ 1   Application mode                                4424 non-null   int64  
+ 2   Application order                               4424 non-null   int64  
+ 3   Course                                          4424 non-null   int64  
+ 4   Daytime/evening attendance	                     4424 non-null   int64  
+ 5   Previous qualification                          4424 non-null   int64  
+ 6   Previous qualification (grade)                  4424 non-null   float64
+ 7   Nacionality                                     4424 non-null   int64  
+ 8   Mother&#39;s qualification                          4424 non-null   int64  
+ 9   Father&#39;s qualification                          4424 non-null   int64  
+ 10  Mother&#39;s occupation                             4424 non-null   int64  
+ 11  Father&#39;s occupation                             4424 non-null   int64  
+ 12  Admission grade                                 4424 non-null   float64
+ 13  Displaced                                       4424 non-null   int64  
+ 14  Educational special needs                       4424 non-null   int64  
+ 15  Debtor                                          4424 non-null   int64  
+ 16  Tuition fees up to date                         4424 non-null   int64  
+ 17  Gender                                          4424 non-null   int64  
+ 18  Scholarship holder                              4424 non-null   int64  
+ 19  Age at enrollment                               4424 non-null   int64  
+ 20  International                                   4424 non-null   int64  
+ 21  Curricular units 1st sem (credited)             4424 non-null   int64  
+ 22  Curricular units 1st sem (enrolled)             4424 non-null   int64  
+ 23  Curricular units 1st sem (evaluations)          4424 non-null   int64  
+ 24  Curricular units 1st sem (approved)             4424 non-null   int64  
+ 25  Curricular units 1st sem (grade)                4424 non-null   float64
+ 26  Curricular units 1st sem (without evaluations)  4424 non-null   int64  
+ 27  Curricular units 2nd sem (credited)             4424 non-null   int64  
+ 28  Curricular units 2nd sem (enrolled)             4424 non-null   int64  
+ 29  Curricular units 2nd sem (evaluations)          4424 non-null   int64  
+ 30  Curricular units 2nd sem (approved)             4424 non-null   int64  
+ 31  Curricular units 2nd sem (grade)                4424 non-null   float64
+ 32  Curricular units 2nd sem (without evaluations)  4424 non-null   int64  
+ 33  Unemployment rate                               4424 non-null   float64
+ 34  Inflation rate                                  4424 non-null   float64
+ 35  GDP                                             4424 non-null   float64
+ 36  Estado                                          4424 non-null   object 
+dtypes: float64(7), int64(29), object(1)
+memory usage: 1.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cat_vars</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Marital status&#39;</span><span class="p">,</span> <span class="s1">&#39;Application mode&#39;</span><span class="p">,</span>                                 
+   <span class="s1">&#39;Application order&#39;</span><span class="p">,</span> <span class="s1">&#39;Course&#39;</span><span class="p">,</span> <span class="s1">&#39;Daytime/evening attendance</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Previous qualification&#39;</span><span class="p">,</span> <span class="s1">&#39;Previous qualification (grade)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Nacionality&#39;</span><span class="p">,</span> <span class="s1">&#39;Mother</span><span class="se">\&#39;</span><span class="s1">s qualification&#39;</span><span class="p">,</span> <span class="s1">&#39;Father</span><span class="se">\&#39;</span><span class="s1">s qualification&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Mother</span><span class="se">\&#39;</span><span class="s1">s occupation&#39;</span><span class="p">,</span> <span class="s1">&#39;Father</span><span class="se">\&#39;</span><span class="s1">s occupation&#39;</span><span class="p">,</span><span class="s1">&#39;Displaced&#39;</span><span class="p">,</span>                                       
+   <span class="s1">&#39;Educational special needs&#39;</span><span class="p">,</span>                       
+  <span class="s1">&#39;Debtor&#39;</span> <span class="p">,</span>                                        
+  <span class="s1">&#39;Tuition fees up to date&#39;</span>  <span class="p">,</span>                        
+  <span class="s1">&#39;Gender&#39;</span>  <span class="p">,</span>                                          
+  <span class="s1">&#39;Scholarship holder&#39;</span><span class="p">,</span><span class="s1">&#39;International&#39;</span><span class="p">,</span><span class="s1">&#39;Estado&#39;</span><span class="p">]]</span> 
+<span class="n">Cat_vars</span><span class="o">=</span> <span class="n">Cat_vars</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>                              
+
+<span class="n">Num_vars</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Previous qualification (grade)&#39;</span><span class="p">,</span><span class="s1">&#39;Admission grade&#39;</span><span class="p">,</span><span class="s1">&#39;Age at enrollment&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (credited)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Curricular units 1st sem (enrolled)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (approved)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (grade)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (without evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (credited)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (without evaluations)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Unemployment rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Inflation rate&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Num_vars</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Previous qualification (grade)</th>
+      <th>Admission grade</th>
+      <th>Age at enrollment</th>
+      <th>Curricular units 1st sem (credited)</th>
+      <th>Curricular units 1st sem (enrolled)</th>
+      <th>Curricular units 1st sem (evaluations)</th>
+      <th>Curricular units 1st sem (approved)</th>
+      <th>Curricular units 1st sem (grade)</th>
+      <th>Curricular units 1st sem (without evaluations)</th>
+      <th>Curricular units 2nd sem (credited)</th>
+      <th>Curricular units 2nd sem (enrolled)</th>
+      <th>Curricular units 2nd sem (evaluations)</th>
+      <th>Curricular units 2nd sem (approved)</th>
+      <th>Curricular units 2nd sem (grade)</th>
+      <th>Curricular units 2nd sem (without evaluations)</th>
+      <th>Unemployment rate</th>
+      <th>Inflation rate</th>
+      <th>GDP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>132.613314</td>
+      <td>126.978119</td>
+      <td>23.265145</td>
+      <td>0.709991</td>
+      <td>6.270570</td>
+      <td>8.299051</td>
+      <td>4.706600</td>
+      <td>10.640822</td>
+      <td>0.137658</td>
+      <td>0.541817</td>
+      <td>6.232143</td>
+      <td>8.063291</td>
+      <td>4.435805</td>
+      <td>10.230206</td>
+      <td>0.150316</td>
+      <td>11.566139</td>
+      <td>1.228029</td>
+      <td>0.001969</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>13.188332</td>
+      <td>14.482001</td>
+      <td>7.587816</td>
+      <td>2.360507</td>
+      <td>2.480178</td>
+      <td>4.179106</td>
+      <td>3.094238</td>
+      <td>4.843663</td>
+      <td>0.690880</td>
+      <td>1.918546</td>
+      <td>2.195951</td>
+      <td>3.947951</td>
+      <td>3.014764</td>
+      <td>5.210808</td>
+      <td>0.753774</td>
+      <td>2.663850</td>
+      <td>1.382711</td>
+      <td>2.269935</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>95.000000</td>
+      <td>95.000000</td>
+      <td>17.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.600000</td>
+      <td>-0.800000</td>
+      <td>-4.060000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>125.000000</td>
+      <td>117.900000</td>
+      <td>19.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>11.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>6.000000</td>
+      <td>2.000000</td>
+      <td>10.750000</td>
+      <td>0.000000</td>
+      <td>9.400000</td>
+      <td>0.300000</td>
+      <td>-1.700000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>133.100000</td>
+      <td>126.100000</td>
+      <td>20.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>8.000000</td>
+      <td>5.000000</td>
+      <td>12.285714</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>8.000000</td>
+      <td>5.000000</td>
+      <td>12.200000</td>
+      <td>0.000000</td>
+      <td>11.100000</td>
+      <td>1.400000</td>
+      <td>0.320000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>140.000000</td>
+      <td>134.800000</td>
+      <td>25.000000</td>
+      <td>0.000000</td>
+      <td>7.000000</td>
+      <td>10.000000</td>
+      <td>6.000000</td>
+      <td>13.400000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.000000</td>
+      <td>10.000000</td>
+      <td>6.000000</td>
+      <td>13.333333</td>
+      <td>0.000000</td>
+      <td>13.900000</td>
+      <td>2.600000</td>
+      <td>1.790000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>190.000000</td>
+      <td>190.000000</td>
+      <td>70.000000</td>
+      <td>20.000000</td>
+      <td>26.000000</td>
+      <td>45.000000</td>
+      <td>26.000000</td>
+      <td>18.875000</td>
+      <td>12.000000</td>
+      <td>19.000000</td>
+      <td>23.000000</td>
+      <td>33.000000</td>
+      <td>20.000000</td>
+      <td>18.571429</td>
+      <td>12.000000</td>
+      <td>16.200000</td>
+      <td>3.700000</td>
+      <td>3.510000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cat_vars</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Marital status</th>
+      <th>Application mode</th>
+      <th>Application order</th>
+      <th>Course</th>
+      <th>Daytime/evening attendance\t</th>
+      <th>Previous qualification</th>
+      <th>Previous qualification (grade)</th>
+      <th>Nacionality</th>
+      <th>Mother's qualification</th>
+      <th>Father's qualification</th>
+      <th>Mother's occupation</th>
+      <th>Father's occupation</th>
+      <th>Displaced</th>
+      <th>Educational special needs</th>
+      <th>Debtor</th>
+      <th>Tuition fees up to date</th>
+      <th>Gender</th>
+      <th>Scholarship holder</th>
+      <th>International</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424.0</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+      <td>4424</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>6</td>
+      <td>18</td>
+      <td>8</td>
+      <td>17</td>
+      <td>2</td>
+      <td>17</td>
+      <td>101.0</td>
+      <td>21</td>
+      <td>29</td>
+      <td>34</td>
+      <td>32</td>
+      <td>46</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>9500</td>
+      <td>1</td>
+      <td>1</td>
+      <td>133.1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>37</td>
+      <td>9</td>
+      <td>9</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Graduate</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>3919</td>
+      <td>1708</td>
+      <td>3026</td>
+      <td>766</td>
+      <td>3941</td>
+      <td>3717</td>
+      <td>491.0</td>
+      <td>4314</td>
+      <td>1069</td>
+      <td>1209</td>
+      <td>1577</td>
+      <td>1010</td>
+      <td>2426</td>
+      <td>4373</td>
+      <td>3921</td>
+      <td>3896</td>
+      <td>2868</td>
+      <td>3325</td>
+      <td>4314</td>
+      <td>2209</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="variables-respuesta">
+<h1>Variables respuesta<a class="headerlink" href="#variables-respuesta" title="Link to this heading">#</a></h1>
+<p>Para el proyecto nuestras variables respuesta o “Target” serán <strong>Estado</strong> y <strong>GDP</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;pastel&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;pastel&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">height</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="se">\n</span><span class="s1">(</span><span class="si">{</span><span class="n">height</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">%)&#39;</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Estado&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Clase&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/35f561e9b2833776670d58d140bba536d44ebb0f29f9e95b1885b2d9140a9f72.png" src="_images/35f561e9b2833776670d58d140bba536d44ebb0f29f9e95b1885b2d9140a9f72.png" />
+</div>
+</div>
+<p>Con este grafico podemos apreciar la distribución de clases de nuestra variable <strong>Estado</strong>, la cual presenta un gran desbalance.
+Mientras que la clase <strong>Graduate</strong> representa casi un 50% de los datos, la variable <strong>Enrolled</strong> apenas alcance un 18% con 794 registros.
+Y aunque la clase <strong>Dropout</strong> tiene más de 1200 registros apenas cubre un 30% de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># histograma + densidad</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="c1"># título y ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Distribución de GDP&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="c1"># estadísticas clave en el gráfico</span>
+<span class="n">mean_val</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">median_val</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mean_val</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Media: </span><span class="si">{</span><span class="n">mean_val</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">median_val</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mediana: </span><span class="si">{</span><span class="n">median_val</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4670314a66eb0e18532e382d9b44424e27acbb9c75f45704ac9b82973d1b8b45.png" src="_images/4670314a66eb0e18532e382d9b44424e27acbb9c75f45704ac9b82973d1b8b45.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocesamiento">
+<h1>Preprocesamiento<a class="headerlink" href="#preprocesamiento" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="division-de-datos">
+<h1>Division de datos<a class="headerlink" href="#division-de-datos" title="Link to this heading">#</a></h1>
+<p>Dividimos los datos 30% test y 70% entrenamiento y proporcionamos el parametro <strong>random_state = 42</strong> para replicabilidad</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span><span class="s1">&#39;GDP&#39;</span><span class="p">])</span>
+<span class="n">Y_Estado</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span>
+<span class="n">Y_GDP</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span>
+<span class="c1"># Dividir los datos en conjuntos de entrenamiento y prueba</span>
+<span class="n">X_train_Estado</span><span class="p">,</span> <span class="n">X_test_Estado</span><span class="p">,</span> <span class="n">Y_train_Estado</span><span class="p">,</span> <span class="n">Y_test_Estado</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y_Estado</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">Y_Estado</span><span class="p">)</span>
+<span class="n">X_train_GDP</span><span class="p">,</span> <span class="n">X_test_GDP</span><span class="p">,</span> <span class="n">Y_train_GDP</span><span class="p">,</span> <span class="n">Y_test_GDP</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y_GDP</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clasificación - Estado:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train:&quot;</span><span class="p">,</span> <span class="n">X_train_Estado</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;Test:&quot;</span><span class="p">,</span> <span class="n">X_test_Estado</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Regresión - GDP:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train:&quot;</span><span class="p">,</span> <span class="n">X_train_GDP</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;Test:&quot;</span><span class="p">,</span> <span class="n">X_test_GDP</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clasificación - Estado:
+Train: (3096, 35) Test: (1328, 35)
+
+Regresión - GDP:
+Train: (3096, 35) Test: (1328, 35)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aqui podemos ver el tamaño de las muestras tanto de entreo como de prueba</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="knn-classifier">
+<h1>KNN Classifier<a class="headerlink" href="#knn-classifier" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_values</span><span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">puntaje_entreno_Estado</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">puntaje_prueba_Estado</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">K_values</span><span class="p">:</span>
+    <span class="n">KNclas_model</span><span class="o">=</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">KNclas_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_Estado</span><span class="p">,</span><span class="n">Y_train_Estado</span><span class="p">)</span>
+    <span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">KNclas_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train_Estado</span><span class="p">)</span>
+    <span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">KNclas_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_Estado</span><span class="p">)</span>
+    <span class="n">puntaje_entreno_Estado</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">Y_train_Estado</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">))</span>
+    <span class="n">puntaje_prueba_Estado</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">Y_test_Estado</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">))</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para el modelo deee <strong>Clasificación</strong> decidimos usar la metrica de <strong>Balanced Accuracy</strong> debido aque la variable respuesta <strong>Estado</strong> presenta un desbalance en sus clases</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">K_values</span><span class="p">,</span> <span class="n">puntaje_entreno_Estado</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Balanced AC entrenamiento&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">K_values</span><span class="p">,</span> <span class="n">puntaje_prueba_Estado</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Balanced AC prueba&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de vecinos (k)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Balanced AC&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/55ba683fabde0713c0c74cc9f1c862f65caf8e8b008dd7727c87a80b306508cc.png" src="_images/55ba683fabde0713c0c74cc9f1c862f65caf8e8b008dd7727c87a80b306508cc.png" />
+</div>
+</div>
+<p>Luego de calcular el <strong>Balanced Acurracy score</strong> para distintos valores de k tomamos el mejor puntaje del teste y nos quedamos con el K que lo obtuvo.
+Para este caso decidimos usar además la metrica <strong>f1_score</strong> con el parametro <strong>average=’macro’</strong> debido a que consideramos que por el desbalance entre clases que presenta la variable lo mejor seria darle el mismo valor a todas las clases.
+Además de generar una matriz de confusión, calcular el ROC (para cada clase) y  el AUC de manera que tengamos una vista más completa del desempeño del modelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_k</span> <span class="o">=</span> <span class="n">K_values</span><span class="p">[</span><span class="n">puntaje_prueba_Estado</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">puntaje_prueba_Estado</span><span class="p">))]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mejor k: </span><span class="si">{</span><span class="n">best_k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">KNclas_model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">best_k</span><span class="p">)</span>
+<span class="n">KNclas_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_Estado</span><span class="p">,</span> <span class="n">Y_train_Estado</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">KNclas_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_Estado</span><span class="p">)</span>
+
+<span class="c1"># Métricas</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Balanced Accuracy:&quot;</span><span class="p">,</span> <span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">Y_test_Estado</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1-score (macro):&quot;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">Y_test_Estado</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">))</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">Y_test_Estado</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">clases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">Y_Estado</span><span class="p">)</span>
+<span class="n">y_test_bin</span> <span class="o">=</span> <span class="n">label_binarize</span><span class="p">(</span><span class="n">Y_test_Estado</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">clases</span><span class="p">)</span>
+<span class="n">y_score</span> <span class="o">=</span> <span class="n">KNclas_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_Estado</span><span class="p">)</span>  <span class="c1"># Probabilidades</span>
+
+<span class="c1"># Calcular ROC AUC macro</span>
+<span class="n">roc_auc_macro</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test_bin</span><span class="p">,</span> <span class="n">y_score</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ROC AUC (macro):&quot;</span><span class="p">,</span> <span class="n">roc_auc_macro</span><span class="p">)</span>
+
+<span class="c1"># Dibujar curva ROC para cada clase</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">clase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">clases</span><span class="p">):</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test_bin</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">y_score</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+    <span class="n">auc_score</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Clase </span><span class="si">{</span><span class="n">clase</span><span class="si">}</span><span class="s2"> (AUC=</span><span class="si">{</span><span class="n">auc_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Línea aleatoria</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Aleatorio&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Curvas ROC por clase&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mejor k: 10
+Balanced Accuracy: 0.5214010782959674
+F1-score (macro): 0.5241691496130451
+</pre></div>
+</div>
+<img alt="_images/1c8e88d2eb0fb2e0181e1f3bb8698e23e897d8dccbaed87b08e9cfd6b055377d.png" src="_images/1c8e88d2eb0fb2e0181e1f3bb8698e23e897d8dccbaed87b08e9cfd6b055377d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ROC AUC (macro): 0.7160882671315494
+</pre></div>
+</div>
+<img alt="_images/16394bf04115068ec7cfacc299774f49209f82826dc192b24cf68a762b4e02b6.png" src="_images/16394bf04115068ec7cfacc299774f49209f82826dc192b24cf68a762b4e02b6.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="knn-regresion">
+<h1>KNN Regresion<a class="headerlink" href="#knn-regresion" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="comparacion-de-distintos-valores-de-k">
+<h1>Comparación de distintos valores de k<a class="headerlink" href="#comparacion-de-distintos-valores-de-k" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="documentacion-y-conclusiones">
+<h1>Documentación y conclusiones<a class="headerlink" href="#documentacion-y-conclusiones" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -505,22 +1452,13 @@ with your book. For more information about this, see <a class="reference externa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="markdown.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="markdown-notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -538,10 +1476,16 @@ with your book. For more information about this, see <a class="reference externa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-notebooks">Markdown + notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#myst-markdown">MyST markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">Code blocks and outputs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Exploratorio de los datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier">KNN Classifier</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion">KNN Regresion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-distintos-valores-de-k">Comparación de distintos valores de k</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-y-conclusiones">Documentación y conclusiones</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
@@ -555,7 +1499,7 @@ with your book. For more information about this, see <a class="reference externa
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Autores
 </p>
 
   </div>
