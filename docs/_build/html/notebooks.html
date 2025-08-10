@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Carga de datos &#8212; Mini Proyecto 1 ML</title>
+    <title>Mini proyecto Integrador K-NN &#8212; Mini Proyecto 1 ML</title>
   
   
   
@@ -175,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Carga de datos
+                    Mini proyecto Integrador K-NN
                 </a>
             </li>
         </ul>
@@ -363,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Carga de datos</h1>
+    <h1>Mini proyecto Integrador K-NN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,18 +373,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Carga de datos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado">Variables asociadas con el Estado</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas">Matrículas actualizadas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario">Becario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso">Curso</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor">Deudor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero">Género</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mini proyecto Integrador K-NN</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-datos"><strong>Carga de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports"><strong>Imports</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre">Variables asociadas con las notas del primer semestre</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda"><strong>EDA</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado"><strong>Variables asociadas con el Estado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas"><strong>Matrículas actualizadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario"><strong>Becario</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso"><strong>Curso</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor"><strong>Deudor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero"><strong>Género</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre"><strong>Variables asociadas con las notas del primer semestre</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-grado">Unidades curriculares 2do semestre (grado)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-aprobadas">Unidades curriculares 1er semestre (aprobadas)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-aprobadas">Unidades curriculares 2do semestre (aprobadas)</a></li>
@@ -394,12 +400,16 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier">KNN Classifier</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion">KNN Regresion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-distintos-valores-de-k">Comparación de distintos valores de k</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-y-conclusiones">Documentación y conclusiones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento"><strong>Preprocesamiento</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier"><strong>KNN Classifier</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion"><strong>KNN Regresion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-datos">Preparar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones"><strong>Conclusiones</strong></a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -412,9 +422,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="carga-de-datos">
-<h1>Carga de datos<a class="headerlink" href="#carga-de-datos" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
+  <center>
+<section class="tex2jax_ignore mathjax_ignore" id="mini-proyecto-integrador-k-nn">
+<h1><strong>Mini proyecto Integrador K-NN</strong><a class="headerlink" href="#mini-proyecto-integrador-k-nn" title="Link to this heading">#</a></h1>
+</center><section id="carga-de-datos">
+<h2><strong>Carga de datos</strong><a class="headerlink" href="#carga-de-datos" title="Link to this heading">#</a></h2>
+<section id="imports">
+<h3><strong>Imports</strong><a class="headerlink" href="#imports" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -430,9 +450,14 @@ document.write(`
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span><span class="n">roc_auc_score</span><span class="p">,</span><span class="n">balanced_accuracy_score</span><span class="p">,</span><span class="n">ConfusionMatrixDisplay</span><span class="p">,</span><span class="n">roc_curve</span><span class="p">,</span><span class="n">auc</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">label_binarize</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,6 +465,7 @@ document.write(`
 <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datos_miniproyecto1.csv&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Target&#39;</span><span class="p">:</span> <span class="s1">&#39;Estado&#39;</span><span class="p">})</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Curricular units 1st sem (grade)&#39;</span><span class="p">:</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">:</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">})</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -478,7 +504,7 @@ document.write(`
       <th>Curricular units 2nd sem (enrolled)</th>
       <th>Curricular units 2nd sem (evaluations)</th>
       <th>Curricular units 2nd sem (approved)</th>
-      <th>Curricular units 2nd sem (grade)</th>
+      <th>second_semester_grade</th>
       <th>Curricular units 2nd sem (without evaluations)</th>
       <th>Unemployment rate</th>
       <th>Inflation rate</th>
@@ -758,6 +784,17 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indicadores de rendimiento académico</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;overall_grade_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">]</span> <span class="o">+</span> 
+                          <span class="n">df</span><span class="p">[</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;grade_change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -777,9 +814,9 @@ document.write(`
  &#39;Curricular units 2nd sem (credited)&#39;
  &#39;Curricular units 2nd sem (enrolled)&#39;
  &#39;Curricular units 2nd sem (evaluations)&#39;
- &#39;Curricular units 2nd sem (approved)&#39; &#39;Curricular units 2nd sem (grade)&#39;
+ &#39;Curricular units 2nd sem (approved)&#39; &#39;second_semester_grade&#39;
  &#39;Curricular units 2nd sem (without evaluations)&#39; &#39;Unemployment rate&#39;
- &#39;Inflation rate&#39; &#39;GDP&#39; &#39;Estado&#39;]
+ &#39;Inflation rate&#39; &#39;GDP&#39; &#39;Estado&#39; &#39;overall_grade_avg&#39; &#39;grade_change&#39;]
 </pre></div>
 </div>
 </div>
@@ -791,7 +828,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4424, 37)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4424, 39)
 </pre></div>
 </div>
 </div>
@@ -805,7 +842,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 4424 entries, 0 to 4423
-Data columns (total 37 columns):
+Data columns (total 39 columns):
  #   Column                                          Non-Null Count  Dtype  
 ---  ------                                          --------------  -----  
  0   Marital status                                  4424 non-null   int64  
@@ -839,14 +876,16 @@ Data columns (total 37 columns):
  28  Curricular units 2nd sem (enrolled)             4424 non-null   int64  
  29  Curricular units 2nd sem (evaluations)          4424 non-null   int64  
  30  Curricular units 2nd sem (approved)             4424 non-null   int64  
- 31  Curricular units 2nd sem (grade)                4424 non-null   float64
+ 31  second_semester_grade                           4424 non-null   float64
  32  Curricular units 2nd sem (without evaluations)  4424 non-null   int64  
  33  Unemployment rate                               4424 non-null   float64
  34  Inflation rate                                  4424 non-null   float64
  35  GDP                                             4424 non-null   float64
  36  Estado                                          4424 non-null   object 
-dtypes: float64(7), int64(29), object(1)
-memory usage: 1.2+ MB
+ 37  overall_grade_avg                               4424 non-null   float64
+ 38  grade_change                                    4424 non-null   float64
+dtypes: float64(9), int64(29), object(1)
+memory usage: 1.3+ MB
 </pre></div>
 </div>
 </div>
@@ -867,8 +906,8 @@ memory usage: 1.2+ MB
 
 <span class="n">Num_vars</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Previous qualification (grade)&#39;</span><span class="p">,</span><span class="s1">&#39;Admission grade&#39;</span><span class="p">,</span><span class="s1">&#39;Age at enrollment&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (credited)&#39;</span><span class="p">,</span>
             <span class="s1">&#39;Curricular units 1st sem (enrolled)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (approved)&#39;</span><span class="p">,</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 1st sem (without evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (credited)&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (without evaluations)&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Unemployment rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Inflation rate&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP&#39;</span><span class="p">]]</span>
+            <span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (evaluations)&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">,</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">,</span><span class="s1">&#39;Curricular units 2nd sem (without evaluations)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Unemployment rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Inflation rate&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;overall_grade_avg&#39;</span><span class="p">,</span><span class="s1">&#39;grade_change&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -911,16 +950,20 @@ memory usage: 1.2+ MB
       <th>Curricular units 2nd sem (enrolled)</th>
       <th>Curricular units 2nd sem (evaluations)</th>
       <th>Curricular units 2nd sem (approved)</th>
-      <th>Curricular units 2nd sem (grade)</th>
+      <th>second_semester_grade</th>
       <th>Curricular units 2nd sem (without evaluations)</th>
       <th>Unemployment rate</th>
       <th>Inflation rate</th>
       <th>GDP</th>
+      <th>overall_grade_avg</th>
+      <th>grade_change</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
+      <td>4424.000000</td>
+      <td>4424.000000</td>
       <td>4424.000000</td>
       <td>4424.000000</td>
       <td>4424.000000</td>
@@ -960,6 +1003,8 @@ memory usage: 1.2+ MB
       <td>11.566139</td>
       <td>1.228029</td>
       <td>0.001969</td>
+      <td>10.435514</td>
+      <td>-0.410616</td>
     </tr>
     <tr>
       <th>std</th>
@@ -981,6 +1026,8 @@ memory usage: 1.2+ MB
       <td>2.663850</td>
       <td>1.382711</td>
       <td>2.269935</td>
+      <td>4.818530</td>
+      <td>2.890376</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1002,6 +1049,8 @@ memory usage: 1.2+ MB
       <td>7.600000</td>
       <td>-0.800000</td>
       <td>-4.060000</td>
+      <td>0.000000</td>
+      <td>-16.142857</td>
     </tr>
     <tr>
       <th>25%</th>
@@ -1023,6 +1072,8 @@ memory usage: 1.2+ MB
       <td>9.400000</td>
       <td>0.300000</td>
       <td>-1.700000</td>
+      <td>11.000000</td>
+      <td>-0.600000</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -1044,6 +1095,8 @@ memory usage: 1.2+ MB
       <td>11.100000</td>
       <td>1.400000</td>
       <td>0.320000</td>
+      <td>12.250000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -1065,6 +1118,8 @@ memory usage: 1.2+ MB
       <td>13.900000</td>
       <td>2.600000</td>
       <td>1.790000</td>
+      <td>13.266667</td>
+      <td>0.452381</td>
     </tr>
     <tr>
       <th>max</th>
@@ -1086,6 +1141,8 @@ memory usage: 1.2+ MB
       <td>16.200000</td>
       <td>3.700000</td>
       <td>3.510000</td>
+      <td>18.283654</td>
+      <td>16.000000</td>
     </tr>
   </tbody>
 </table>
@@ -1288,7 +1345,7 @@ memory usage: 1.2+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/abdb49e54590d7b5b3001d79edcff2690be670f245ebee02bc4b817bb6f6d2cb.png" src="_images/abdb49e54590d7b5b3001d79edcff2690be670f245ebee02bc4b817bb6f6d2cb.png" />
+<img alt="_images/66ca4996071d0ba9445ac31c4b9a1c38795d7b8008334f1bbd803eeea7c45a4d.png" src="_images/66ca4996071d0ba9445ac31c4b9a1c38795d7b8008334f1bbd803eeea7c45a4d.png" />
 </div>
 </div>
 <p>El análisis de asociación (Eta²) para las variables numéricas indica que el rendimiento académico del estudiante es el factor predictivo predominante para la variable “Estado”. Las variables con mayor poder explicativo son las “unidades curriculares aprobadas del 2º semestre” (η²=0.39) y la “nota del 2º semestre” (η²=0.34). En contraste, los indicadores macroeconómicos como la “tasa de inflación” (η²=0.00079) y el “PIB” (η²=0.0022) tienen una asociación prácticamente nula, lo que demuestra que el desempeño individual del estudiante es mucho más relevante que el contexto económico general.</p>
@@ -1377,28 +1434,11 @@ Previous qualification      0.157570         NaN
 <p>El análisis muestra que la carrera elegida (“Course”) es el factor más determinante en las notas del primer semestre (η² = 0.21). El resto de variables, incluyendo el estado de la matrícula y factores socioeconómicos, tienen una influencia considerablemente menor, siendo en su mayoría mínima o casi nula.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------- 2. Pearson para numéricas vs nota primer semestre ----------</span>
-<span class="n">pearson_results</span> <span class="o">=</span> <span class="n">Num_vars</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Association&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------- 2. Pearson para numéricas vs promedio de ambos semestres ----------</span>
+<span class="n">pearson_results</span> <span class="o">=</span> <span class="n">Num_vars</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span> <span class="s1">&#39;second_semester_grade&#39;</span><span class="p">,</span> <span class="s1">&#39;overall_grade_avg&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Association&#39;</span><span class="p">)</span>
 <span class="n">pearson_results</span> <span class="o">=</span> <span class="n">pearson_results</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">pearson_results</span><span class="p">[</span><span class="s1">&#39;Association&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pearson_results</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Pearson r&#39;</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Correlación (Pearson) entre variables numéricas y nota del primer semestre&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Variable numérica&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Correlación&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/08ace4b0f49af57b097da5bad966b469ae32e95847405c96be28459a4e1c0dbf.png" src="_images/08ace4b0f49af57b097da5bad966b469ae32e95847405c96be28459a4e1c0dbf.png" />
-</div>
-</div>
-<p>El análisis de correlación de Pearson revela que el rendimiento académico del estudiante es, por lejos, el predictor más fuerte de las notas del primer semestre. Específicamente, las calificaciones obtenidas en el segundo semestre muestran una correlación positiva casi perfecta (r = 0.84). En marcado contraste, factores externos como la nota de admisión y los indicadores macroeconómicos (PIB, inflación) no presentan una correlación significativa, lo que sugiere que el rendimiento previo y continuo del estudiante es el factor clave.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------- 3. Unir resultados ----------</span>
+<span class="c1"># ---------- 3. Unir resultados ----------</span>
 <span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">eta_df</span><span class="p">,</span> <span class="n">pearson_results</span><span class="p">])</span>
 
 <span class="c1"># ---------- 4. Top 10 ----------</span>
@@ -1418,7 +1458,6 @@ Previous qualification      0.157570         NaN
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        Association
-Curricular units 2nd sem (grade)           0.837170
 Curricular units 1st sem (approved)        0.696113
 Curricular units 2nd sem (approved)        0.673335
 Curricular units 2nd sem (evaluations)     0.487236
@@ -1426,21 +1465,24 @@ Curricular units 1st sem (evaluations)     0.418038
 Curricular units 2nd sem (enrolled)        0.406167
 Curricular units 1st sem (enrolled)        0.376996
 Course                                     0.208376
+grade_change                              -0.166529
 Age at enrollment                         -0.156616
 Curricular units 1st sem (credited)        0.122978
 </pre></div>
 </div>
-<img alt="_images/e332fcfc8273bb583146f9ca8b9f0905ebfb1026f7864cc5bdcd2a832aac479e.png" src="_images/e332fcfc8273bb583146f9ca8b9f0905ebfb1026f7864cc5bdcd2a832aac479e.png" />
+<img alt="_images/ae19fec5997b2c2f2af5feb6ebe5409016da5acd9cb625b669648b40f468e6a0.png" src="_images/ae19fec5997b2c2f2af5feb6ebe5409016da5acd9cb625b669648b40f468e6a0.png" />
 </div>
 </div>
 <p>El análisis confirma que el factor más determinante para la nota del primer semestre es el propio rendimiento académico del estudiante. Las calificaciones del segundo semestre y las unidades curriculares aprobadas tanto en el primer como en el segundo semestre son las variables con la asociación más fuerte. Esto subraya que el desempeño académico previo y concurrente es el mejor predictor de los resultados del estudiante.</p>
 </section>
+</section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="eda">
-<h1>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h1>
+<h1><strong>EDA</strong><a class="headerlink" href="#eda" title="Link to this heading">#</a></h1>
 <p>Por efectos de tiempo y practicos escogeremos las 5 variables con mayor asociación a las variables ‘Estado’ y ‘first_semester_grade’, para la realización del EDA es decir:</p>
 <ul class="simple">
 <li><p>Estado: ‘Tuitions to feed up’, ‘Scholarship holder, ‘Course’, ‘Debtor’, ‘Gender’.</p></li>
-<li><p>first_semester_grade: ‘Curricular units 2nd sem (grade)’,’Curricular units 1st sem(approved)’, ‘Curricular units 2nd sem(approved)’, ‘Curricular units 1st sem (Evaluations)’, ‘Curricular units 2nd sem (Enrolled).</p></li>
+<li><p>first_semester_grade: ‘second_semester_grade’,’Curricular units 1st sem(approved)’, ‘Curricular units 2nd sem(approved)’, ‘Curricular units 1st sem (Evaluations)’, ‘Curricular units 2nd sem (Enrolled).</p></li>
 </ul>
 <section id="variables-respuesta">
 <h2>Variables respuesta<a class="headerlink" href="#variables-respuesta" title="Link to this heading">#</a></h2>
@@ -1505,9 +1547,9 @@ Y aunque la clase <strong>Dropout</strong> tiene más de 1200 registros apenas c
 <p>El histograma revela una distribución marcadamente bimodal. Se observa una concentración anómala de notas en cero. El resto de las calificaciones se agrupa de forma casi normal, con una mediana de 12.29, que es una medida más representativa del rendimiento del estudiante típico que la media (10.64), la cual se ve fuertemente sesgada a la baja por los valores nulos.</p>
 </section>
 <section id="variables-asociadas-con-el-estado">
-<h2>Variables asociadas con el Estado<a class="headerlink" href="#variables-asociadas-con-el-estado" title="Link to this heading">#</a></h2>
+<h2><strong>Variables asociadas con el Estado</strong><a class="headerlink" href="#variables-asociadas-con-el-estado" title="Link to this heading">#</a></h2>
 <section id="matriculas-actualizadas">
-<h3>Matrículas actualizadas<a class="headerlink" href="#matriculas-actualizadas" title="Link to this heading">#</a></h3>
+<h3><strong>Matrículas actualizadas</strong><a class="headerlink" href="#matriculas-actualizadas" title="Link to this heading">#</a></h3>
 <p>‘Tuition fees up to date’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1561,7 +1603,7 @@ Y aunque la clase <strong>Dropout</strong> tiene más de 1200 registros apenas c
 <p>Se observa de manera contundente que el grupo de desertores (“Dropout”) aglutina la gran mayoría de los estudiantes con matrícula no actualizada. Para los estudiantes graduados y los actualmente inscritos, no tener la matrícula al día es una situación prácticamente inexistente, lo que subraya la fuerte capacidad de esta variable para señalar un riesgo de abandono.</p>
 </section>
 <section id="becario">
-<h3>Becario<a class="headerlink" href="#becario" title="Link to this heading">#</a></h3>
+<h3><strong>Becario</strong><a class="headerlink" href="#becario" title="Link to this heading">#</a></h3>
 <p>‘Scholarship holder’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1615,7 +1657,7 @@ Y aunque la clase <strong>Dropout</strong> tiene más de 1200 registros apenas c
 <p>Se confirma el patrón observado anteriormente: el número absoluto de estudiantes no becados es mayor en todas las categorías, pero la diferencia es abrumadora en el grupo de desertores (“Dropout”). Por el contrario, el grupo de graduados (“Graduate”) concentra, con diferencia, el mayor número de estudiantes becarios, lo que refuerza la fuerte asociación positiva entre tener una beca y la probabilidad de completar los estudios exitosamente.</p>
 </section>
 <section id="curso">
-<h3>Curso<a class="headerlink" href="#curso" title="Link to this heading">#</a></h3>
+<h3><strong>Curso</strong><a class="headerlink" href="#curso" title="Link to this heading">#</a></h3>
 <p>‘Course’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1702,7 +1744,7 @@ Si bien la tasa de graduación es alta en los cursos populares, estos también c
 Esti indic que, si bien los cursos con mayor matrícula son los que más graduados aportan, también son los que presentan los mayores desafíos en términos de retención.</p>
 </section>
 <section id="deudor">
-<h3>Deudor<a class="headerlink" href="#deudor" title="Link to this heading">#</a></h3>
+<h3><strong>Deudor</strong><a class="headerlink" href="#deudor" title="Link to this heading">#</a></h3>
 <p>‘Debtor’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1756,7 +1798,7 @@ Esti indic que, si bien los cursos con mayor matrícula son los que más graduad
 <p>El hallazgo más significativo es que el grupo de desertores (“Dropout”) concentra, por un amplio margen, el mayor número absoluto de estudiantes con deudas. En contraste, la deuda es una condición mínima entre los graduados. Esta visualización subraya que la carga de la deuda es una característica predominante en la población que abandona sus estudios, consolidando su valor como un potente indicador de riesgo.</p>
 </section>
 <section id="genero">
-<h3>Género<a class="headerlink" href="#genero" title="Link to this heading">#</a></h3>
+<h3><strong>Género</strong><a class="headerlink" href="#genero" title="Link to this heading">#</a></h3>
 <p>‘Gender’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1813,13 +1855,13 @@ Mientras que el abandono afecta a ambos géneros en números absolutos similares
 </section>
 </section>
 <section id="variables-asociadas-con-las-notas-del-primer-semestre">
-<h2>Variables asociadas con las notas del primer semestre<a class="headerlink" href="#variables-asociadas-con-las-notas-del-primer-semestre" title="Link to this heading">#</a></h2>
+<h2><strong>Variables asociadas con las notas del primer semestre</strong><a class="headerlink" href="#variables-asociadas-con-las-notas-del-primer-semestre" title="Link to this heading">#</a></h2>
 <section id="unidades-curriculares-2do-semestre-grado">
 <h3>Unidades curriculares 2do semestre (grado)<a class="headerlink" href="#unidades-curriculares-2do-semestre-grado" title="Link to this heading">#</a></h3>
 <p>‘Curricular units 2nd sem (grade)’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades curriculares 2do semestre (notas)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de unidades curriculares 2do semestre&#39;</span><span class="p">)</span>
@@ -1834,7 +1876,7 @@ Mientras que el abandono afecta a ambos géneros en números absolutos similares
 <p>Un pico anómalo en cero identifica a una subpoblación inactiva, muy probablemente desertores, mientras que la distribución normal posterior representa a los estudiantes activos con una carga académica estándar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;second_semester_grade&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Regresión entre Notas del Primer y Segundo Semestre&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nota Primer Semestre&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Segundo Semestre&#39;</span><span class="p">)</span>
@@ -1844,7 +1886,7 @@ Mientras que el abandono afecta a ambos géneros en números absolutos similares
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cd616b56794d36391d9d243fcd0a44849312088af6e8808f6198a90ac1f4975a.png" src="_images/cd616b56794d36391d9d243fcd0a44849312088af6e8808f6198a90ac1f4975a.png" />
+<img alt="_images/6cd46984d6c78a12fed917f1fb074953ec4e3d0d78837bb58f8ef1e90bf4d920.png" src="_images/6cd46984d6c78a12fed917f1fb074953ec4e3d0d78837bb58f8ef1e90bf4d920.png" />
 </div>
 </div>
 <p>El gráfico muestra correlación positiva para el grupo principal de estudiantes, pero la gran cantidad de puntos en el valor ‘cero’ de ambos ejes distorsiona fuertemente la línea de regresión. Esto sugiere que el cero no es una calificación real, sino un valor que representa datos ausentes o abandonos</p>
@@ -2030,10 +2072,9 @@ Mientras que el abandono afecta a ambos géneros en números absolutos similares
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="preprocesamiento">
-<h1>Preprocesamiento<a class="headerlink" href="#preprocesamiento" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="division-de-datos">
-<h1>Division de datos<a class="headerlink" href="#division-de-datos" title="Link to this heading">#</a></h1>
+<h1><strong>Preprocesamiento</strong><a class="headerlink" href="#preprocesamiento" title="Link to this heading">#</a></h1>
+<section id="division-de-datos">
+<h2>Division de datos<a class="headerlink" href="#division-de-datos" title="Link to this heading">#</a></h2>
 <p>Dividimos los datos 30% test y 70% entrenamiento y proporcionamos el parametro <strong>random_state = 42</strong> para replicabilidad</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2053,18 +2094,19 @@ Mientras que el abandono afecta a ambos géneros en números absolutos similares
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clasificación - Estado:
-Train: (3096, 35) Test: (1328, 35)
+Train: (3096, 37) Test: (1328, 37)
 
 Regresión - GDP:
-Train: (3096, 35) Test: (1328, 35)
+Train: (3096, 37) Test: (1328, 37)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Aqui podemos ver el tamaño de las muestras tanto de entreo como de prueba</p>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="knn-classifier">
-<h1>KNN Classifier<a class="headerlink" href="#knn-classifier" title="Link to this heading">#</a></h1>
+<h1><strong>KNN Classifier</strong><a class="headerlink" href="#knn-classifier" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_values</span><span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
@@ -2096,7 +2138,7 @@ Train: (3096, 35) Test: (1328, 35)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7300a1a2684e8f3978e53c9d8c5361f86623fc3204912c78468f1755ab2da210.png" src="_images/7300a1a2684e8f3978e53c9d8c5361f86623fc3204912c78468f1755ab2da210.png" />
+<img alt="_images/8eae9a7a3e2437e7aba7c30f4b9f43dc192800cebf664d695d3483d4a030d690.png" src="_images/8eae9a7a3e2437e7aba7c30f4b9f43dc192800cebf664d695d3483d4a030d690.png" />
 </div>
 </div>
 <p>Luego de calcular el <strong>Balanced Acurracy score</strong> para distintos valores de k tomamos el mejor puntaje del teste y nos quedamos con el K que lo obtuvo.
@@ -2148,26 +2190,195 @@ Además de generar una matriz de confusión, calcular el ROC (para cada clase) y
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mejor k: 10
-Balanced Accuracy: 0.5214010782959674
-F1-score (macro): 0.5241691496130451
+Balanced Accuracy: 0.5335375007506155
+F1-score (macro): 0.5377479857679893
 </pre></div>
 </div>
-<img alt="_images/8f08aca329a5acc43a34dca9e94a8d613caa78ee65d1da0547516dd07df99334.png" src="_images/8f08aca329a5acc43a34dca9e94a8d613caa78ee65d1da0547516dd07df99334.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ROC AUC (macro): 0.7160882671315494
+<img alt="_images/38cbfc8e97b80283fc7b1dabf83c31ba3354a7af54d24ca4cd1f40b5dffcda19.png" src="_images/38cbfc8e97b80283fc7b1dabf83c31ba3354a7af54d24ca4cd1f40b5dffcda19.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ROC AUC (macro): 0.7258587928698913
 </pre></div>
 </div>
-<img alt="_images/ec1bfe2f64d5f5bfe131d717a472603140e0d6c8c0901951744e9cb4e6d46c05.png" src="_images/ec1bfe2f64d5f5bfe131d717a472603140e0d6c8c0901951744e9cb4e6d46c05.png" />
+<img alt="_images/ddb3e8ee427e73363c7491a813ff81cd64208f9b7c15605f32a14e812b9be2d2.png" src="_images/ddb3e8ee427e73363c7491a813ff81cd64208f9b7c15605f32a14e812b9be2d2.png" />
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="knn-regresion">
-<h1>KNN Regresion<a class="headerlink" href="#knn-regresion" title="Link to this heading">#</a></h1>
+<h1><strong>KNN Regresion</strong><a class="headerlink" href="#knn-regresion" title="Link to this heading">#</a></h1>
+<section id="preparar-datos">
+<h2>Preparar datos<a class="headerlink" href="#preparar-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Definir la lista de columnas a excluir para evitar data leakage</span>
+<span class="n">features_to_exclude</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;overall_grade_avg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;second_semester_grade&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 1st sem (approved)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;grade_change&#39;</span><span class="p">,</span>                          
+    <span class="s1">&#39;Estado&#39;</span>                                  
+<span class="p">]</span>
+
+<span class="c1"># 2. Separar características (X) y variable objetivo (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">features_to_exclude</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;overall_grade_avg&#39;</span><span class="p">]</span>
+
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;is_inactive&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="c1"># 3. Identificar columnas categóricas y numéricas, ya se hizo arriba pero xd.</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Marital status&#39;</span><span class="p">,</span> <span class="s1">&#39;Application mode&#39;</span><span class="p">,</span> <span class="s1">&#39;Application order&#39;</span><span class="p">,</span> <span class="s1">&#39;Course&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Daytime/evening attendance</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Previous qualification&#39;</span><span class="p">,</span> <span class="s1">&#39;Nacionality&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Mother&#39;s qualification&quot;</span><span class="p">,</span> <span class="s2">&quot;Father&#39;s qualification&quot;</span><span class="p">,</span> <span class="s2">&quot;Mother&#39;s occupation&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Father&#39;s occupation&quot;</span><span class="p">,</span> <span class="s1">&#39;Displaced&#39;</span><span class="p">,</span> <span class="s1">&#39;Educational special needs&#39;</span><span class="p">,</span> <span class="s1">&#39;Debtor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Tuition fees up to date&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Scholarship holder&#39;</span><span class="p">,</span> <span class="s1">&#39;International&#39;</span>
+<span class="p">]</span>
+
+<span class="n">numerical_features</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Previous qualification (grade)&#39;</span><span class="p">,</span> <span class="s1">&#39;Admission grade&#39;</span><span class="p">,</span> <span class="s1">&#39;Age at enrollment&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 1st sem (credited)&#39;</span><span class="p">,</span> <span class="s1">&#39;Curricular units 1st sem (enrolled)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">,</span> <span class="s1">&#39;Curricular units 1st sem (without evaluations)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 2nd sem (credited)&#39;</span><span class="p">,</span> <span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Curricular units 2nd sem (evaluations)&#39;</span><span class="p">,</span> <span class="s1">&#39;Curricular units 2nd sem (without evaluations)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Unemployment rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Inflation rate&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="s1">&#39;is_inactive&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Asegurémonos de que todas las columnas de X están en una de las dos listas</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">categorical_features</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">numerical_features</span><span class="p">)</span> <span class="o">==</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Características seleccionadas para el modelo.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número de características categóricas: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">categorical_features</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número de características numéricas: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">numerical_features</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Características seleccionadas para el modelo.
+Número de características categóricas: 18
+Número de características numéricas: 15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dividir los datos en conjuntos de entrenamiento y prueba</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+
+<span class="c1"># Crear el preprocesador</span>
+<span class="n">numeric_transformer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sparse_output=False para facilitar la inspección</span>
+
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">numeric_transformer</span><span class="p">,</span> <span class="n">numerical_features</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span> <span class="c1"># Por si alguna columna no fue clasificada</span>
+<span class="p">)</span>
+
+<span class="c1"># Aplicar el preprocesamiento</span>
+<span class="n">X_train_processed</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_processed</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dimensiones de X_train procesado: </span><span class="si">{</span><span class="n">X_train_processed</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimensiones de X_test procesado: </span><span class="si">{</span><span class="n">X_test_processed</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Búsqueda del mejor valor de k ---</span>
+
+<span class="n">k_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">rmse_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Iniciando la búsqueda del valor óptimo de k...&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_range</span><span class="p">:</span>
+    <span class="n">knn_regressor</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">knn_regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_processed</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_processed</span><span class="p">)</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+    <span class="n">rmse_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Búsqueda de k completada.&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Visualización para la selección de k ---</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-v0_8-whitegrid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_range</span><span class="p">,</span> <span class="n">rmse_scores</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error (RMSE) vs. Valor de k para KNN Regressor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de Vecinos (k)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Raíz del Error Cuadrático Medio (RMSE)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">k_range</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimensiones de X_train procesado: (3539, 243)
+Dimensiones de X_test procesado: (885, 243)
+
+Iniciando la búsqueda del valor óptimo de k...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Búsqueda de k completada.
+</pre></div>
+</div>
+<img alt="_images/ad2d59b95ba912767c6d415f656cf89d9f59ed21c05566543ce162134c6f13ce.png" src="_images/ad2d59b95ba912767c6d415f656cf89d9f59ed21c05566543ce162134c6f13ce.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimal_k</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Crear y entrenar el modelo final</span>
+<span class="n">best_knn_model</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">optimal_k</span><span class="p">)</span>
+<span class="n">best_knn_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_processed</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Realizar predicciones finales</span>
+<span class="n">y_pred_final</span> <span class="o">=</span> <span class="n">best_knn_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_processed</span><span class="p">)</span>
+
+<span class="c1"># Calcular las métricas de evaluación</span>
+<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_final</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_final</span><span class="p">))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_final</span><span class="p">)</span>
+
+<span class="c1"># Mostrar los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Evaluación del Modelo KNN Final (k=</span><span class="si">{</span><span class="n">optimal_k</span><span class="si">}</span><span class="s2">) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error Absoluto Medio (MAE): </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Raíz del Error Cuadrático Medio (RMSE): </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coeficiente de Determinación (R²): </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Análisis Gráfico (este bloque no necesita cambios) ---</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_pred_final</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y_pred_final</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_pred_final</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">],</span> <span class="p">[</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Valores Reales vs. Predicciones del Modelo&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valores Reales (overall_grade_avg)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicciones del Modelo&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Evaluación del Modelo KNN Final (k=20) ---
+Error Absoluto Medio (MAE): 1.8354
+Raíz del Error Cuadrático Medio (RMSE): 3.1934
+Coeficiente de Determinación (R²): 0.5742
+</pre></div>
+</div>
+<img alt="_images/4ef0ca655606c6674ac3a51e554313ad6d93903f05177f3c2584236b6cfa536a.png" src="_images/4ef0ca655606c6674ac3a51e554313ad6d93903f05177f3c2584236b6cfa536a.png" />
+</div>
+</div>
+<p>El modelo KNN implementado, aunque sencillo, ha demostrado ser una herramienta válida para la predicción del rendimiento académico, logrando explicar una porción sustancial de la variabilidad en las notas. Los resultados sugieren que el modelo es robusto para predecir casos generales, pero su rendimiento disminuye frente a estudiantes con perfiles atípicos, lo que abre la puerta a futuras mejoras.</p>
+<p>Hemos tenido dificultades en hacer que tenga en cuenta que la variable de Curricular units 1st sem (without evaluations), es de gran peso.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="comparacion-de-distintos-valores-de-k">
-<h1>Comparación de distintos valores de k<a class="headerlink" href="#comparacion-de-distintos-valores-de-k" title="Link to this heading">#</a></h1>
+<section id="conclusiones">
+<h2><strong>Conclusiones</strong><a class="headerlink" href="#conclusiones" title="Link to this heading">#</a></h2>
+<p>El modelo de clasifiación pierde mucho al tratarse de una variable muy desbalanceada, ademas el gran número de vecinos dificultó la correcta clasificación.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="documentacion-y-conclusiones">
-<h1>Documentación y conclusiones<a class="headerlink" href="#documentacion-y-conclusiones" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2216,18 +2427,24 @@ F1-score (macro): 0.5241691496130451
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Carga de datos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado">Variables asociadas con el Estado</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas">Matrículas actualizadas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario">Becario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso">Curso</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor">Deudor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero">Género</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Mini proyecto Integrador K-NN</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-datos"><strong>Carga de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports"><strong>Imports</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre">Variables asociadas con las notas del primer semestre</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda"><strong>EDA</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado"><strong>Variables asociadas con el Estado</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas"><strong>Matrículas actualizadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario"><strong>Becario</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso"><strong>Curso</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor"><strong>Deudor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero"><strong>Género</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre"><strong>Variables asociadas con las notas del primer semestre</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-grado">Unidades curriculares 2do semestre (grado)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-aprobadas">Unidades curriculares 1er semestre (aprobadas)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-aprobadas">Unidades curriculares 2do semestre (aprobadas)</a></li>
@@ -2237,12 +2454,16 @@ F1-score (macro): 0.5241691496130451
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier">KNN Classifier</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion">KNN Regresion</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-distintos-valores-de-k">Comparación de distintos valores de k</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacion-y-conclusiones">Documentación y conclusiones</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento"><strong>Preprocesamiento</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-de-datos">Division de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-classifier"><strong>KNN Classifier</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn-regresion"><strong>KNN Regresion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-datos">Preparar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones"><strong>Conclusiones</strong></a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
