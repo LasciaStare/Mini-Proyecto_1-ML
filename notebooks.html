@@ -376,6 +376,22 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Carga de datos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado">Variables asociadas con el Estado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas">Matrículas actualizadas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario">Becario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso">Curso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor">Deudor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero">Género</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre">Variables asociadas con las notas del primer semestre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-grado">Unidades curriculares 2do semestre (grado)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-aprobadas">Unidades curriculares 1er semestre (aprobadas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-aprobadas">Unidades curriculares 2do semestre (aprobadas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-evaluaciones">Unidades curriculares 1er semestre (Evaluaciones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-matriculados">Unidades curriculares 2do semestre (Matriculados)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
@@ -1421,9 +1437,11 @@ Curricular units 1st sem (credited)        0.122978
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="eda">
 <h1>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h1>
-<p>Por efectos de tiempo y practicos escogeremos las 5 variables con mayor asociación a las variables ‘Estado’ y ‘first_semester_grade’, para la realización del EDA es decir:
-Estado: ‘Tuitions to feed up’, ‘Scholarship holder, ‘Course’, ‘Debtor’, ‘Gender’.
-first_semester_grade: ‘Curricular units 2nd sem (grade)’,’Curricular units 1st sem(approved)’, ‘Curricular units 2nd sem(approved)’, ‘Curricular units 1st sem (Evaluations)’, ‘Curricular units 2nd sem (Enrolled).)</p>
+<p>Por efectos de tiempo y practicos escogeremos las 5 variables con mayor asociación a las variables ‘Estado’ y ‘first_semester_grade’, para la realización del EDA es decir:</p>
+<ul class="simple">
+<li><p>Estado: ‘Tuitions to feed up’, ‘Scholarship holder, ‘Course’, ‘Debtor’, ‘Gender’.</p></li>
+<li><p>first_semester_grade: ‘Curricular units 2nd sem (grade)’,’Curricular units 1st sem(approved)’, ‘Curricular units 2nd sem(approved)’, ‘Curricular units 1st sem (Evaluations)’, ‘Curricular units 2nd sem (Enrolled).</p></li>
+</ul>
 <section id="variables-respuesta">
 <h2>Variables respuesta<a class="headerlink" href="#variables-respuesta" title="Link to this heading">#</a></h2>
 <p>Para el proyecto nuestras variables respuesta o “Target” serán <strong>Estado</strong> y <strong>Las notas del primer semestre</strong></p>
@@ -1485,6 +1503,530 @@ Y aunque la clase <strong>Dropout</strong> tiene más de 1200 registros apenas c
 </div>
 </div>
 <p>El histograma revela una distribución marcadamente bimodal. Se observa una concentración anómala de notas en cero. El resto de las calificaciones se agrupa de forma casi normal, con una mediana de 12.29, que es una medida más representativa del rendimiento del estudiante típico que la media (10.64), la cual se ve fuertemente sesgada a la baja por los valores nulos.</p>
+</section>
+<section id="variables-asociadas-con-el-estado">
+<h2>Variables asociadas con el Estado<a class="headerlink" href="#variables-asociadas-con-el-estado" title="Link to this heading">#</a></h2>
+<section id="matriculas-actualizadas">
+<h3>Matrículas actualizadas<a class="headerlink" href="#matriculas-actualizadas" title="Link to this heading">#</a></h3>
+<p>‘Tuition fees up to date’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Tuition fees up to date&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Matrícula actualizada&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>  <span class="c1"># Cambia 0 y 1 por No y Sí</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2dd42ca88fe0a1f2c6489795d25fe4033b624acf1a0e9bb3d8e3779942f82c4b.png" src="_images/2dd42ca88fe0a1f2c6489795d25fe4033b624acf1a0e9bb3d8e3779942f82c4b.png" />
+</div>
+</div>
+<p>El gráfico ilustra un fuerte desbalance en la variable “Matrícula actualizada”. Se observa que una abrumadora mayoría de los estudiantes (cerca de 4,000) sí cuenta con una matrícula vigente, mientras que una pequeña fracción (alrededor de 500) no</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contingencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tuition fees up to date&#39;</span><span class="p">],</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">contingencia</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Proporción&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Matrícula actualizada&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Proporción por estado y matrícula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5ca35167fb21f8c1423546c55702db5894260324ca90e0fb7d9369f73556b1ac.png" src="_images/5ca35167fb21f8c1423546c55702db5894260324ca90e0fb7d9369f73556b1ac.png" />
+</div>
+</div>
+<p>Se revela una fuerte relación entre el estado del estudiante y si su matrícula está actualizada. La falta de matrícula (“No”) es un indicador clave de deserción: mientras que es una condición rara en estudiantes inscritos (5%) y graduados (1%), representa al 32% del grupo de desertores (“Dropout”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Tuition fees up to date&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de estudiantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre estado y matrícula actualizada&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Matrícula actualizada&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ab9844c31e7cf238db9cd49182cbecf3e89c7ab42a3eafd1af14303eaeabae10.png" src="_images/ab9844c31e7cf238db9cd49182cbecf3e89c7ab42a3eafd1af14303eaeabae10.png" />
+</div>
+</div>
+<p>Se observa de manera contundente que el grupo de desertores (“Dropout”) aglutina la gran mayoría de los estudiantes con matrícula no actualizada. Para los estudiantes graduados y los actualmente inscritos, no tener la matrícula al día es una situación prácticamente inexistente, lo que subraya la fuerte capacidad de esta variable para señalar un riesgo de abandono.</p>
+</section>
+<section id="becario">
+<h3>Becario<a class="headerlink" href="#becario" title="Link to this heading">#</a></h3>
+<p>‘Scholarship holder’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Scholarship holder&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Becario&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b61bec6266af36180180cc7e055d40469d188eff6f40b5b3c47da315ca353586.png" src="_images/b61bec6266af36180180cc7e055d40469d188eff6f40b5b3c47da315ca353586.png" />
+</div>
+</div>
+<p>Con más de 3,000 estudiantes sin beca frente a poco más de 1,000 que sí la tienen. Esta distribución indica que, si bien la ayuda económica está presente, no es la condición predominante en esta población estudiantil.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contingencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Scholarship holder&#39;</span><span class="p">],</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">contingencia</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Proporción&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Becario&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Proporción por estado y becarios&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/71306e9c7f7696efdbc923a54f7964b12222d8bbd382697fed55df39ded0e19b.png" src="_images/71306e9c7f7696efdbc923a54f7964b12222d8bbd382697fed55df39ded0e19b.png" />
+</div>
+</div>
+<p>Notablemente, la proporción de becarios es más alta entre los graduados (38%) y disminuye significativamente para los estudiantes que desertan, donde solo el 9% contaba con beca. Esto sugiere que la condición de becario está positivamente asociada con la persistencia y la culminación de los estudios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Scholarship holder&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de estudiantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre estado y becas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Becarios&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c49455a6379650c721739fdcb00ccca2106ee3d8d52ccbab3ab6317070e3d34f.png" src="_images/c49455a6379650c721739fdcb00ccca2106ee3d8d52ccbab3ab6317070e3d34f.png" />
+</div>
+</div>
+<p>Se confirma el patrón observado anteriormente: el número absoluto de estudiantes no becados es mayor en todas las categorías, pero la diferencia es abrumadora en el grupo de desertores (“Dropout”). Por el contrario, el grupo de graduados (“Graduate”) concentra, con diferencia, el mayor número de estudiantes becarios, lo que refuerza la fuerte asociación positiva entre tener una beca y la probabilidad de completar los estudios exitosamente.</p>
+</section>
+<section id="curso">
+<h3>Curso<a class="headerlink" href="#curso" title="Link to this heading">#</a></h3>
+<p>‘Course’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Diccionario de código a nombre</span>
+<span class="n">course_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">33</span><span class="p">:</span> <span class="s2">&quot;Biofuel Production Technologies&quot;</span><span class="p">,</span>
+    <span class="mi">171</span><span class="p">:</span> <span class="s2">&quot;Animation and Multimedia Design&quot;</span><span class="p">,</span>
+    <span class="mi">8014</span><span class="p">:</span> <span class="s2">&quot;Social Service (evening attendance)&quot;</span><span class="p">,</span>
+    <span class="mi">9003</span><span class="p">:</span> <span class="s2">&quot;Agronomy&quot;</span><span class="p">,</span>
+    <span class="mi">9070</span><span class="p">:</span> <span class="s2">&quot;Communication Design&quot;</span><span class="p">,</span>
+    <span class="mi">9085</span><span class="p">:</span> <span class="s2">&quot;Veterinary Nursing&quot;</span><span class="p">,</span>
+    <span class="mi">9119</span><span class="p">:</span> <span class="s2">&quot;Informatics Engineering&quot;</span><span class="p">,</span>
+    <span class="mi">9130</span><span class="p">:</span> <span class="s2">&quot;Equinculture&quot;</span><span class="p">,</span>
+    <span class="mi">9147</span><span class="p">:</span> <span class="s2">&quot;Management&quot;</span><span class="p">,</span>
+    <span class="mi">9238</span><span class="p">:</span> <span class="s2">&quot;Social Service&quot;</span><span class="p">,</span>
+    <span class="mi">9254</span><span class="p">:</span> <span class="s2">&quot;Tourism&quot;</span><span class="p">,</span>
+    <span class="mi">9500</span><span class="p">:</span> <span class="s2">&quot;Nursing&quot;</span><span class="p">,</span>
+    <span class="mi">9556</span><span class="p">:</span> <span class="s2">&quot;Oral Hygiene&quot;</span><span class="p">,</span>
+    <span class="mi">9670</span><span class="p">:</span> <span class="s2">&quot;Advertising and Marketing Management&quot;</span><span class="p">,</span>
+    <span class="mi">9773</span><span class="p">:</span> <span class="s2">&quot;Journalism and Communication&quot;</span><span class="p">,</span>
+    <span class="mi">9853</span><span class="p">:</span> <span class="s2">&quot;Basic Education&quot;</span><span class="p">,</span>
+    <span class="mi">9991</span><span class="p">:</span> <span class="s2">&quot;Management (evening attendance)&quot;</span>
+<span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Course&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Curso&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de estudiantes por curso&#39;</span><span class="p">)</span>
+
+<span class="c1"># Colocar nombre encima de cada barra</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># No usar así, mejor sacar directamente el valor x-tick</span>
+    <span class="c1"># Mejor: sacamos el valor del tick (código) desde los xticks y usamos el índice</span>
+<span class="c1"># Mejor método:</span>
+    
+<span class="c1"># Obtener las posiciones y etiquetas actuales de las barras (códigos)</span>
+<span class="n">ticks</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()]</span>
+
+<span class="c1"># Como en countplot el orden de barras es el orden de aparición, podemos usar:</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">):</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">course_names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">)),</span> 
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3acfb02c7ea97fc5cefee2799616a6b86eba531639e2c5c614e72cc6b88c156d.png" src="_images/3acfb02c7ea97fc5cefee2799616a6b86eba531639e2c5c614e72cc6b88c156d.png" />
+</div>
+</div>
+<p>El gráfico revela una marcada disparidad en la distribución de estudiantess entre los distintos programas académicos. El curso de Enfermería (código 9500) destaca de forma abrumadora, concentrando la mayor cantidad de estudiantes, superando los 700. Otros programas como Gestión (9147), Servicio Social (9238) y Enfermería Veterinaria (9085) también presentan un número significativo de estudiante, pero en una escala mucho menor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Course&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Curso&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de estudiantes por curso y estado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9a4affbe2a750bf1cde0a2ea1480b8688e445c32f7f97c300a54eae958acc98a.png" src="_images/9a4affbe2a750bf1cde0a2ea1480b8688e445c32f7f97c300a54eae958acc98a.png" />
+</div>
+</div>
+<p>La carrera de Enfermería (9500) no solo tiene la mayor población estudiantil, sino que también produce, por un margen muy amplio, el mayor número de graduados.
+Si bien la tasa de graduación es alta en los cursos populares, estos también concentran el mayor número absoluto de desertores. Programas como Gestión (9147), Enfermería (9500) y Gestión Nocturna (9991) muestran cifras de abandono significativas.
+Esti indic que, si bien los cursos con mayor matrícula son los que más graduados aportan, también son los que presentan los mayores desafíos en términos de retención.</p>
+</section>
+<section id="deudor">
+<h3>Deudor<a class="headerlink" href="#deudor" title="Link to this heading">#</a></h3>
+<p>‘Debtor’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Debtor&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Deudor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>  <span class="c1"># Cambia 0 y 1 por No y Sí</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dd4d15a6328818050d92a53e2779385db4938f571a8b7b84c373ced8801bc7aa.png" src="_images/dd4d15a6328818050d92a53e2779385db4938f571a8b7b84c373ced8801bc7aa.png" />
+</div>
+</div>
+<p>Se observa un fuerte desbalance, con casi 4,000 estudiantes que no son deudores frente a un grupo considerablemente menor, de alrededor de 500, que sí lo son. Este desequilibrio define a la condición de “Deudor” como una clase minoritaria dentro del conjunto de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contingencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Debtor&#39;</span><span class="p">],</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">contingencia</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Proporción&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Deudor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Proporción por estado y matrícula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3abd4a1ff122e4e7ce92afc77838723380d62d295cd68fbdd2c2ad5ed7551061.png" src="_images/3abd4a1ff122e4e7ce92afc77838723380d62d295cd68fbdd2c2ad5ed7551061.png" />
+</div>
+</div>
+<p>La condición de deudor es notablemente más frecuente entre los estudiantes que han desertado (“Dropout”), alcanzando al 22% de este grupo. Esta proporción disminuye para los estudiantes actualmente inscritos (11%) y es mínima entre los graduados (5%). Estos datos sugieren que las dificultades económicas, manifestadas como deuda, son un factor de riesgo fuertemente asociado a la deserción estudiantil.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Debtor&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de estudiantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre estado y deudas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Deudas&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sí&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c35833435fec1fdb8de0d64a8b90b938480162d2c09130177c5f47ce89e27e68.png" src="_images/c35833435fec1fdb8de0d64a8b90b938480162d2c09130177c5f47ce89e27e68.png" />
+</div>
+</div>
+<p>El hallazgo más significativo es que el grupo de desertores (“Dropout”) concentra, por un amplio margen, el mayor número absoluto de estudiantes con deudas. En contraste, la deuda es una condición mínima entre los graduados. Esta visualización subraya que la carga de la deuda es una característica predominante en la población que abandona sus estudios, consolidando su valor como un potente indicador de riesgo.</p>
+</section>
+<section id="genero">
+<h3>Género<a class="headerlink" href="#genero" title="Link to this heading">#</a></h3>
+<p>‘Gender’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Género&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">])</span>  <span class="c1"># Cambia 0 y 1 por No y Sí</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d496d936cccb02224caf3a27bf3eeedc6c13b88ed1c4b98026717736690ef99a.png" src="_images/d496d936cccb02224caf3a27bf3eeedc6c13b88ed1c4b98026717736690ef99a.png" />
+</div>
+</div>
+<p>Existe una predominancia significativa de estudiantes de género femenino (cerca de 2,900) sobre el masculino (aproximadamente 1,500).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contingencia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">],</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">contingencia</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Proporción&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Género&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Proporción por estado y matrícula&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7474d8d8219803d50c1aad533cc74554f0ef8bbd56f269e92e8dba8067e24021.png" src="_images/7474d8d8219803d50c1aad533cc74554f0ef8bbd56f269e92e8dba8067e24021.png" />
+</div>
+</div>
+<p>Se observa una marcada diferencia en el grupo de graduados, donde las estudiantes de género femenino representan el 75% del total, una proporción significativamente mayor que la de sus contrapartes masculinos (25%). En contraste, la distribución de género entre los desertores (“Dropout”) es prácticamente equitativa. Este hallazgo indica que las mujeres, en este conjunto de datos, no solo son la mayoría en la población estudiantil, sino que también se gradúan en una proporción considerablemente mayor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Estado del estudiante&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de estudiantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relación entre estado y género&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Género&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2f0dbfad1d0d1e6424a53c6b6a4ae40c361e74cd8fa0d219c7c9607956a7a3e1.png" src="_images/2f0dbfad1d0d1e6424a53c6b6a4ae40c361e74cd8fa0d219c7c9607956a7a3e1.png" />
+</div>
+</div>
+<p>El número de mujeres que se gradúan (más de 1600) es casi el triple que el de los hombres, lo que demuestra un rendimiento y una tasa de finalización de estudios abrumadoramente superiores para el género femenino.
+De manera interesante, el número de desertores es prácticamente el mismo para ambos géneros, a pesar de que hay muchas más mujeres en la población estudiantil total. Esto implica que, en términos relativos, la tasa de deserción es considerablemente mayor para los estudiantes masculinos.
+Mientras que el abandono afecta a ambos géneros en números absolutos similares, el éxito académico, medido por la graduación, está fuertemente inclinado hacia las estudiantes femeninas.</p>
+</section>
+</section>
+<section id="variables-asociadas-con-las-notas-del-primer-semestre">
+<h2>Variables asociadas con las notas del primer semestre<a class="headerlink" href="#variables-asociadas-con-las-notas-del-primer-semestre" title="Link to this heading">#</a></h2>
+<section id="unidades-curriculares-2do-semestre-grado">
+<h3>Unidades curriculares 2do semestre (grado)<a class="headerlink" href="#unidades-curriculares-2do-semestre-grado" title="Link to this heading">#</a></h3>
+<p>‘Curricular units 2nd sem (grade)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades curriculares 2do semestre (notas)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de unidades curriculares 2do semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/71562cb8b261d5d32a820eedb12697e026f42ee8cb035b38400d70aed16af11a.png" src="_images/71562cb8b261d5d32a820eedb12697e026f42ee8cb035b38400d70aed16af11a.png" />
+</div>
+</div>
+<p>Un pico anómalo en cero identifica a una subpoblación inactiva, muy probablemente desertores, mientras que la distribución normal posterior representa a los estudiantes activos con una carga académica estándar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Curricular units 2nd sem (grade)&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Regresión entre Notas del Primer y Segundo Semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nota Primer Semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Segundo Semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cd616b56794d36391d9d243fcd0a44849312088af6e8808f6198a90ac1f4975a.png" src="_images/cd616b56794d36391d9d243fcd0a44849312088af6e8808f6198a90ac1f4975a.png" />
+</div>
+</div>
+<p>El gráfico muestra correlación positiva para el grupo principal de estudiantes, pero la gran cantidad de puntos en el valor ‘cero’ de ambos ejes distorsiona fuertemente la línea de regresión. Esto sugiere que el cero no es una calificación real, sino un valor que representa datos ausentes o abandonos</p>
+</section>
+<section id="unidades-curriculares-1er-semestre-aprobadas">
+<h3>Unidades curriculares 1er semestre (aprobadas)<a class="headerlink" href="#unidades-curriculares-1er-semestre-aprobadas" title="Link to this heading">#</a></h3>
+<p>‘Curricular units 1st sem(approved)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 1st sem (approved)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades curriculares 1er semestre (aprobadas)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de unidades curriculares aprobadas 1er semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/caab1b5b667d7898adc7ae5cdf54e3867d11c102526171236f3767bd14bbfac0.png" src="_images/caab1b5b667d7898adc7ae5cdf54e3867d11c102526171236f3767bd14bbfac0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># INVERTIMOS LAS VARIABLES EN LOS EJES X e Y</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Curricular units 1st sem (approved)&#39;</span><span class="p">,</span> <span class="c1"># Variable discreta como categoría</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span>                <span class="c1"># Variable continua para la distribución</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Nota Promedio por Número de Unidades Aprobadas&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de Unidades Aprobadas en el 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Promedio del 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/074064dbd01e4e94911b282fbb49efb582ef16d34c0a1e21974a083aa5918cd8.png" src="_images/074064dbd01e4e94911b282fbb49efb582ef16d34c0a1e21974a083aa5918cd8.png" />
+</div>
+</div>
+<p>a medida que los estudiantes aprueban más unidades, su nota promedio tiende a ser más alta y consistente. Además, se observa una mayor dispersión de notas en quienes aprueban pocas materias, mientras que el rendimiento es más homogéneo y elevado en aquellos que superan una mayor cantidad de unidades.</p>
+</section>
+<section id="unidades-curriculares-2do-semestre-aprobadas">
+<h3>Unidades curriculares 2do semestre (aprobadas)<a class="headerlink" href="#unidades-curriculares-2do-semestre-aprobadas" title="Link to this heading">#</a></h3>
+<p>‘Curricular units 2nd sem (approved)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades curriculares 2do semestre (aprobadas)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de unidades curriculares aprobadas 2do semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5d5d4bbf6406833eb52c7c305a86c3d304437dac11c9bd692ee1d43e4e363210.png" src="_images/5d5d4bbf6406833eb52c7c305a86c3d304437dac11c9bd692ee1d43e4e363210.png" />
+</div>
+</div>
+<p>El histograma revela una distribución bimodal de unidades curriculares aprobadas. Un gran número de estudiantes no aprobó ninguna unidad (valor 0, probable dropout). Un segundo pico significativo de aprobación se concentra entre 6 y 7 unidades. Muy pocos estudiantes aprueban más de 8 unidades, lo que sugiere un límite práctico en la carga académica exitosa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># INVERTIMOS LAS VARIABLES EN LOS EJES X e Y</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Curricular units 2nd sem (approved)&#39;</span><span class="p">,</span> <span class="c1"># Variable discreta como categoría</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span>                <span class="c1"># Variable continua para la distribución</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Nota Promedio por Número de Unidades Aprobadas&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de Unidades Aprobadas en el 2do Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Promedio del 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/77777ef03e97a1774ad21cff490942d7525ca9622a7f54fc99863760047d6ac1.png" src="_images/77777ef03e97a1774ad21cff490942d7525ca9622a7f54fc99863760047d6ac1.png" />
+</div>
+</div>
+<p>Se observa una clara tendencia ascendente: a mayor número de unidades aprobadas en el segundo semestre, más alta y consistente fue la nota promedio del primero. El grupo que no aprueba ninguna materia es el más variado, incluyendo tanto a estudiantes con buen rendimiento previo (posibles abandonos) como a aquellos con notas bajas.</p>
+</section>
+<section id="unidades-curriculares-1er-semestre-evaluaciones">
+<h3>Unidades curriculares 1er semestre (Evaluaciones)<a class="headerlink" href="#unidades-curriculares-1er-semestre-evaluaciones" title="Link to this heading">#</a></h3>
+<p>‘Curricular units 1st sem (Evaluations)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades curriculares 1er semestre (Evaluaciones)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de numero de evaluaciones en unidades curriculares en 1er semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fe4a5e3e11d2438b259227b0b42b48f1f66186cae6c4360f972bd50fb997f5be.png" src="_images/fe4a5e3e11d2438b259227b0b42b48f1f66186cae6c4360f972bd50fb997f5be.png" />
+</div>
+</div>
+<p>El histograma muestra que el número de evaluaciones por estudiante está concentrado principalmente entre 6 y 12, con la frecuencia más alta alrededor de 8-9 evaluaciones</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># INVERTIMOS LAS VARIABLES EN LOS EJES X e Y</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Curricular units 1st sem (evaluations)&#39;</span><span class="p">,</span> <span class="c1"># Variable discreta como categoría</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span>                <span class="c1"># Variable continua para la distribución</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Nota Promedio por Número de Evaluaciones en 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de evaluaciones en el 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Promedio del 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/666328fdd98fcb32add85e094568065571e842675626876842731e67608f5c5d.png" src="_images/666328fdd98fcb32add85e094568065571e842675626876842731e67608f5c5d.png" />
+</div>
+</div>
+<p>Los estudiantes con 5 o menos evaluaciones tienen un rendimiento bajo y muy variable. A partir de 6 evaluaciones, la nota promedio salta a un nivel consistentemente más alto (entre 12 y 13). La presencia de numerosos outliers con nota cero para este último grupo sugiere fuertemente que el valor ‘0’ no es una calificación real, sino un código para abandono.</p>
+</section>
+<section id="unidades-curriculares-2do-semestre-matriculados">
+<h3>Unidades curriculares 2do semestre (Matriculados)<a class="headerlink" href="#unidades-curriculares-2do-semestre-matriculados" title="Link to this heading">#</a></h3>
+<p>‘Curricular units 2nd sem (Enrolled)’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Unidades matriculadas en 2do semestre&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de unidades &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0a727a8655d9effd96d499b43019e10f47a7828ae9e7f9141de3cbc36ef21eff.png" src="_images/0a727a8655d9effd96d499b43019e10f47a7828ae9e7f9141de3cbc36ef21eff.png" />
+</div>
+</div>
+<p>La carga académica del segundo semestre es muy homogénea, con una fuerte concentración de estudiantes matriculados en 6 unidades. La distribución está fuertemente sesgada a la derecha, mostrando que es muy raro que un estudiante se matricule en más de 8 unidades. El pequeño pico en 0 sugiere un grupo de estudiantes que no se reinscribió.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># INVERTIMOS LAS VARIABLES EN LOS EJES X e Y</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Curricular units 2nd sem (enrolled)&#39;</span><span class="p">,</span> <span class="c1"># Variable discreta como categoría</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;first_semester_grade&#39;</span><span class="p">,</span>                <span class="c1"># Variable continua para la distribución</span>
+    <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de la Nota Promedio por Número de unidades matriculadas&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Número de unidades matriculadas en 2do semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nota Promedio del 1er Semestre&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ec503270f739c4b88b50d725c7b27276e56dd096bdb3360806190fd5cd4ea0b6.png" src="_images/ec503270f739c4b88b50d725c7b27276e56dd096bdb3360806190fd5cd4ea0b6.png" />
+</div>
+</div>
+<p>El gráfico muestra que los estudiantes que se matriculan en una carga académica estándar (5 o más unidades) en el segundo semestre tuvieron, en general, un buen y consistente rendimiento en el primero. En contraste, aquellos que se matriculan en muy pocas unidades (1-4) presentan una variabilidad de notas extremadamente alta.</p>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="preprocesamiento">
@@ -1611,10 +2153,7 @@ F1-score (macro): 0.5241691496130451
 </pre></div>
 </div>
 <img alt="_images/8f08aca329a5acc43a34dca9e94a8d613caa78ee65d1da0547516dd07df99334.png" src="_images/8f08aca329a5acc43a34dca9e94a8d613caa78ee65d1da0547516dd07df99334.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ROC AUC (macro):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.7160882671315494
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ROC AUC (macro): 0.7160882671315494
 </pre></div>
 </div>
 <img alt="_images/ec1bfe2f64d5f5bfe131d717a472603140e0d6c8c0901951744e9cb4e6d46c05.png" src="_images/ec1bfe2f64d5f5bfe131d717a472603140e0d6c8c0901951744e9cb4e6d46c05.png" />
@@ -1680,6 +2219,22 @@ F1-score (macro): 0.5241691496130451
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Carga de datos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-respuesta">Variables respuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-el-estado">Variables asociadas con el Estado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriculas-actualizadas">Matrículas actualizadas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#becario">Becario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curso">Curso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deudor">Deudor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genero">Género</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-asociadas-con-las-notas-del-primer-semestre">Variables asociadas con las notas del primer semestre</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-grado">Unidades curriculares 2do semestre (grado)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-aprobadas">Unidades curriculares 1er semestre (aprobadas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-aprobadas">Unidades curriculares 2do semestre (aprobadas)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-1er-semestre-evaluaciones">Unidades curriculares 1er semestre (Evaluaciones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unidades-curriculares-2do-semestre-matriculados">Unidades curriculares 2do semestre (Matriculados)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
